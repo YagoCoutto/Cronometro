@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --font: 'Manrope', sans-serif;
+}
+
+main{
+    width: 100vw;
+    min-height: 100vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/fs/b59111151262487.6308a89654159.jpg");
+    background-position: right;
+    background-size: contain;
+
+}
+
+.box{
+    min-width: 300px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+   
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 20.5px );
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.284);
+}
+
+.contador{
+    color: black;
+    font-family: var(--font);
+    font-size: 3.3em;
+    margin-bottom: 8px;
+}
+.menu-btt > input{
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin: 10px;
+
+    font-family: var(--font);
+    font-variant: small-caps;
+    font-weight: bolder;
+    font-size: 1.6em;
+}
+.menu-btt > #btt-parar{
+   color: rgb(199, 16, 16);
+}

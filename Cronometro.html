@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronometro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="box">
+            <div class="contador">
+                <p id="cont">00:00:00</p>
+            </div>
+            <div class="menu-btt">
+                <input type="button" value="start" id="btt-iniciar" onclick="iniciar()">
+                <input type="button" value="pause" id="btt-pausar" onclick="pausar()">
+                <input type="button" value="stop" id="btt-parar" onclick="parar()">
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        let cont;
+        let time = 1000
+        let s = 0
+        let m = 0
+        let h = 0
+        function contador() {
+            cont = setInterval(() => { timer() }, time)
+        }
+        function timer() {
+            s++
+            if (s == 60) {
+                s = 0
+                m += 1
+            } if (m == 60) {
+                m = 0
+                h += 1
+            } if (h > 23) {
+                h = 0
+            }
+            console.log(h, m, s)
+            let se = (h < 10 ? `0` + h : h) + ':' + (m < 10 ? `0` + m : m) + ':' + (s < 10 ? `0` + s : s)
+            document.getElementById('cont').innerText = se
+        }
+        function iniciar() {
+            contador()
+            document.getElementById('btt-iniciar').disabled = true;
+            
+        }
+        function pausar() {
+            clearInterval(cont)
+            document.getElementById('btt-iniciar').disabled = false;
+
+        }
+        function parar() {
+            clearInterval(cont)
+            s = 0
+            m = 0
+            h = 0
+            document.getElementById('cont').innerText = '00:00:00'
+
+        }
+    </script>
+</body>
+
+</html>
